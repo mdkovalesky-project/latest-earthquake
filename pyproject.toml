@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "livelatestearthquake-indonesia"
+version = "0.0.1"
+authors = [
+  { name="MDKovalesky", email="dzikrikovalesky@gmail.com" },
+]
+description = "This package will get the live latest earthquake from BMKG | Meteorological, Climatological, and Geophysical Agency"
+
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Development Status :: 5 - Production/Stable",
+]
+
+[latestearthquake.urls]
+"Source Url" = "https://github.com/mdkovalesky-project/latest-earthquake"
+"My Github Project" = "https://github.com/mdkovalesky-project/"
