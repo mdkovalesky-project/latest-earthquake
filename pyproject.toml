@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "livelatestearthquake-indonesia"
-version = "0.0.1"
+version = "0.0.3"
 authors = [
   { name="MDKovalesky", email="dzikrikovalesky@gmail.com" },
 ]
