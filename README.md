@@ -1,1 +1,1 @@
-# scraping-data-bmkg
+# Lates Earthquake from Indonesia
