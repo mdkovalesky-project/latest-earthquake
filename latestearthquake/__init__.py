@@ -3,18 +3,35 @@ from bs4 import BeautifulSoup
 """
 Method = fungsi
 Field / Atrribute = variable
+Constructor =  Method yang dipanggil pertama kali saat object diciptakan. gunakan untuk mendeklarasikan semua 
+variable/field pada kelas
 """
 
-class LatestQuake:
-    def __init__(self, url):
-        self.description = "to get the live latest earthquake in indonesia from bmkg.go.id"
+
+class Disaster:
+    def __init__(self, url, description):
+        self.description = description
         self.result = None
         self.url = url
+    def show_desc(self):
+        print(self.description)
+    def scraping_data(self):
+        print("scraping_data is't implemented")
+    def show_data(self):
+        print("scraping_data is't implemented")
+    def run(self):
+        self.scraping_data()
+        self.show_data()
 
-    def ekstraksi_data(self):
+
+class LatestQuake(Disaster):
+    def __init__(self, url):
+
+        super(LatestQuake, self).__init__(url, "to get the live latest earthquake in indonesia from https://bmkg.go.id/")
+    def scraping_data(self):
         # global magnitude
         try:
-            content = requests.get()
+            content = requests.get(self.url)
         except Exception:
             return None
 
@@ -62,8 +79,6 @@ class LatestQuake:
             self.result = hasil
         else:
             return None
-
-
     def show_data(self):
         if self.result is None:
             print("Unable to Find Recent Earthquake Data")
@@ -77,14 +92,32 @@ class LatestQuake:
         print(f"Coordinate Location: LS = {self.result['coordinate']['ls']}, BT = {self.result['coordinate']['bt']}")
         print(f"Location Quake: {self.result['central']}")
         print(f"Description: {self.result['desc']}")
-    def run(self):
-        self.ekstraksi_data()
-        self.show_data()
+
+
+class LatestFlooded(Disaster):
+    def __init__(self, url):
+        super(LatestFlooded, self).__init__(url, "Not Implemented, but should return last flood in Indonesia")
+
+    def show_desc(self):
+        print(f"UNDER CONSTRUCTIONS {self.description}")
 
 if __name__ == '__main__':
     quake_in_indonesia = LatestQuake('https://bmkg.go.id')
-    print(f'description: {quake_in_indonesia.description}\n')
-    print('\n~~~Live Earthquake Application~~~')
+    # print(f'description: {quake_in_indonesia.description}')
+    print('~~~Live Earthquake Application~~~')
+    quake_in_indonesia.show_desc()
     quake_in_indonesia.run()
+
+    flood_in_indonesia = LatestFlooded('Not Yet')
+    # print(f'\nDeskripsi class oleh banjir terkini: {flood_in_indonesia.description}')
+    flood_in_indonesia.show_desc()
+    flood_in_indonesia.run()
+
+    list_disaster = [quake_in_indonesia, flood_in_indonesia]
+    print("\nSemua Bencana yang Tersedia")
+    for disaster in list_disaster:
+        disaster.show_desc()
+
+
 
 # 'https://bmkg.go.id'
