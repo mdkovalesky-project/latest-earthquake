@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-description = "to get the live latest earthquake in indonesia from bmkg.id"
+description = "to get the live latest earthquake in indonesia from bmkg.go.id"
 
 def ekstraksi_data():
     # global magnitude
@@ -72,6 +72,7 @@ def show_data(result):
 
 
 if __name__ == '__main__':
+    print(f'description: {description}\n')
     print('~~~Live Earthquake Application~~~')
     result = ekstraksi_data()
     show_data(result)

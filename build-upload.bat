@@ -1,4 +1,4 @@
 @echo off
-rmdir dist /A /Q
+rmdir dist
 py -m build
 py -m twine upload --repository pypi dist/*
