@@ -87,3 +87,4 @@ if __name__ == '__main__':
     print('\n~~~Live Earthquake Application~~~')
     quake_in_indonesia.run()
 
+# 'https://bmkg.go.id'
