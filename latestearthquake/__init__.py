@@ -87,7 +87,3 @@ if __name__ == '__main__':
     print('\n~~~Live Earthquake Application~~~')
     quake_in_indonesia.run()
 
-    quake_in_indonesia = LatestQuake("climate.com")
-    print(f'description: {quake_in_indonesia.description}\n')
-    print('\n~~~Live Earthquake Application~~~')
-    quake_in_indonesia.run()
