@@ -1,4 +1,5 @@
-# Lates Earthquake in Indonesia
+# Latest Earthquake in Indonesia
+This scraping data live latest earthquake in indonesia
 This package will get the live latest earthquake from BMKG | Meteorological, Climatological, and Geophysical Agency
 
 ## HOW IT WORK?
